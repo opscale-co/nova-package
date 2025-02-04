@@ -202,7 +202,7 @@ foreach ($files as $file) {
     match (true) {
         //str_contains($file, determineSeparator('src/Tool.php')) => rename($file, determineSeparator('./src/'.$className.'Tool.php')),
         //str_contains($file, determineSeparator('src/ToolServiceProvider.php')) => rename($file, determineSeparator('./src/'.$className.'ToolServiceProvider.php')),
-        str_contains($file, determineSeparator('config/nova-tools.php')) => rename($file, determineSeparator('./config/'.$packageSlugWithoutPrefix.'.php')),
+        str_contains($file, determineSeparator('config/nova-tools.php')) => rename($file, determineSeparator('./config/'.$packageSlug.'.php')),
         str_contains($file, 'README.md') => remove_readme_paragraphs($file),
         default => [],
     };
