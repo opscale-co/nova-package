@@ -208,7 +208,11 @@ foreach ($files as $file) {
     };
 }
 
-confirm('Install dependencies and execute setup?') && run('composer install')  && run('npm install') && run('npx husky install') && run('vendor/bin/duster fix');
+run('composer install');
+run('npm install');
+run('npx husky install');
+run('vendor/bin/duster fix');
+run('npx eslint --fix');
 
 writeln('Remember to edit README file.');
 

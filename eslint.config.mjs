@@ -18,7 +18,7 @@ export default [
     prettierConfig,
     {
         languageOptions: {
-            ecmaVersion: 2017,
+            ecmaVersion: 2018,
             globals: {
                 Nova: true,
                 ...globals.browser,
@@ -26,7 +26,7 @@ export default [
             },
         },
         rules: {
-            'vue/html-indent': ['error', 4],
+            'vue/html-indent': ['error', 2],
             'vue/multi-word-component-names': 'off',
         }
     }
