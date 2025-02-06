@@ -80,7 +80,7 @@ composer require :vendor/:package_name
 
 ```
 
-Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
+Next up, you must register the tool with Nova using **Singleton pattern**. This is typically done in the `tools` method of the `NovaServiceProvider`.
 
 ```php
 
@@ -90,7 +90,7 @@ public function tools()
 {
     return [
         // ...
-        new \:namespace_vendor\:namespace_tool_name\Tool(),
+        app(\:namespace_vendor\:namespace_tool_name\Tool::class),
     ];
 }
 

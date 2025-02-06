@@ -7,51 +7,32 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use :namespace_vendor\:namespace_tool_name\Http\Middleware\Authorize;
 use Laravel\Nova\Nova;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class ToolServiceProvider extends ServiceProvider
+class ToolServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function boot()
     {
-        /*$this->loadConfigs();
-        $this->loadCommands();
-        $this->loadMigrations();
-
-        Nova::serving(function (ServingNova $event) {
-            $this->loadResources();
-            $this->loadRoutes();
-        });*/
+        // Remember: https://laravel.com/docs/11.x/providers#writing-service-providers
     }
 
     public function register()
     {
-        //
-    }
+        $this->app->singleton(Tool::class, function ($app) {
+            return new Tool();
+        });
 
-    /*protected function loadConfigs()
-    {
-        $filename = '';
-        $this->publishes([
-            __DIR__."/../config/$filename" => config_path($filename),
-        ]);
-    }
+        /*$this->loadResources();
+        $this->loadRoutes();
 
-    protected function loadCommands()
-    {
         if ($this->app->runningInConsole()) {
-            $this->commands([]);
-        }
+            $this->loadConfigs();
+            $this->loadCommands();
+            $this->loadMigrations();
+        }*/
     }
 
-    protected function loadMigrations()
-    {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
-        $this->publishesMigrations([
-            __DIR__.'/../database/migrations' => database_path('migrations'),
-        ]);
-    }
-
-    protected function loadResources()
+    /*protected function loadResources()
     {
         Nova::resources([]);
     }
@@ -65,5 +46,27 @@ class ToolServiceProvider extends ServiceProvider
         Route::middleware(['nova', Authorize::class])
                 ->prefix('nova-vendor/:vendor/:package_name')
                 ->group(__DIR__.'/../routes/api.php');
+    }
+                
+    protected function loadConfigs()
+    {
+        $filename = ':package_name.php';
+        $this->publishes([
+            __DIR__."/../config/$filename" => config_path($filename),
+        ]);
+    }
+
+    protected function loadCommands()
+    {
+        $this->commands([]);
+    }
+
+    protected function loadMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        $this->publishesMigrations([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ]);
     }*/
 }
