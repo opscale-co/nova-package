@@ -90,7 +90,7 @@ public function tools()
 {
     return [
         // ...
-        app(\:namespace_vendor\:namespace_tool_name\Tool::class),
+        new \:namespace_vendor\:namespace_tool_name\Tool(),
     ];
 }
 

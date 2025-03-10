@@ -7,26 +7,21 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use :namespace_vendor\:namespace_tool_name\Http\Middleware\Authorize;
 use Laravel\Nova\Nova;
-use Illuminate\Contracts\Support\DeferrableProvider;
 
-class ToolServiceProvider extends ServiceProvider implements DeferrableProvider
+class ToolServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Remember: https://laravel.com/docs/11.x/providers#writing-service-providers
+        /*Nova::serving(function (ServingNova $event) {
+            $this->registerResources();
+            $this->registerRoutes();
+        });*/
     }
 
     public function register()
     {
-        $this->app->singleton(Tool::class, function ($app) {
-            return new Tool();
-        });
-
-        /*$this->loadResources();
-        $this->loadRoutes();
-
+        /*$this->loadConfigs();
         if ($this->app->runningInConsole()) {
-            $this->loadConfigs();
             $this->loadCommands();
             $this->loadMigrations();
         }*/
