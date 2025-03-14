@@ -12,19 +12,22 @@ class ToolServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        /*Nova::serving(function (ServingNova $event) {
-            $this->registerResources();
-            $this->registerRoutes();
+        /*$this->loadConfigs();
+        $this->loadRoutes();
+
+        if ($this->app->runningInConsole()) {
+            $this->loadCommands();
+            $this->loadMigrations();
+        }
+            
+        Nova::serving(function (ServingNova $event) {
+            $this->loadResources();
         });*/
     }
 
     public function register()
     {
-        /*$this->loadConfigs();
-        if ($this->app->runningInConsole()) {
-            $this->loadCommands();
-            $this->loadMigrations();
-        }*/
+        //
     }
 
     /*protected function loadResources()
