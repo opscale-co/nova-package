@@ -1,7 +1,5 @@
 ## Support us
 
-Support Opscale
-
 At Opscale, we’re passionate about contributing to the open-source community by providing solutions that help businesses scale efficiently. If you’ve found our tools helpful, here are a few ways you can show your support:
 
 ⭐ **Star this repository** to help others discover our work and be part of our growing community. Every star makes a difference!
@@ -26,13 +24,13 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 
 2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
 
-3. Check the GitHub Actions workflows you want to keep
+3. Check the GitHub Actions workflows you want to keep.
 
-4. Keep in mind the template is configured with [Duster](https://github.com/tighten/duster) and [Commitlint](https://commitlint.js.org/) 
+4. If you want to publish your package in Packagist, you can use the publish.sh script.
 
-5. Have fun creating your package
+5. Keep in mind the template is configured with [Duster](https://github.com/tighten/duster) and [Commitlint](https://commitlint.js.org/) 
 
-6. If you need a deeper how-to, consider checking our <a  href="https://loom.com/share/folder/00f6ef4e555c47e39df796340298e113">Loom videos</a>.
+6. Have fun creating your package.
 
 ---
 
@@ -62,15 +60,15 @@ Now you're ready to develop your package inside a Nova app.
 
 <!--/delete-->
 
-# Description
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
+## Description
 
 :package_description
 
 Add a screenshot of the tool here.
 
 ## Installation
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
 
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
@@ -104,7 +102,7 @@ Click on the ":package_name" menu item in your Nova app to see the tool provided
 
 ``` bash
 
-composer test
+npm run test
 
 ```
 
