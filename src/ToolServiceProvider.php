@@ -12,8 +12,8 @@ class ToolServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        /*$this->loadConfigs();
         $this->loadRoutes();
+        /*$this->loadConfigs();
 
         if ($this->app->runningInConsole()) {
             $this->loadCommands();

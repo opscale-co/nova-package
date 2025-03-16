@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \:namespace_vendor\:namespace_tool_name\Http\Controllers\ToolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('test-case', \:namespace_vendor\:namespace_tool_name\Http\Controllers\ToolController::class . '@index');
+Route::get('test-case', [ToolController::class, 'index']);
